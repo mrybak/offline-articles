@@ -1,0 +1,17 @@
+CACHE MANIFEST
+#v42s
+
+CACHE:
+/articles/
+/articles/?title
+/static/css/bootstrap.css
+/static/css/bootstrap-responsive.css
+/static/img/glyphicons-halflings-white.png
+/static/js/bootstrap.min.js
+/static/js/local.js
+/static/js/jquery-1.9.1.min.js
+
+# Resources that require the user to be online.
+NETWORK:
+sync.html
+/articles/sync

@@ -1,0 +1,6 @@
+{% for article in object_list %}
+    <script type="text/javascript">
+            localStorage.setItem("{{ article.title }}", "{{ article.content }}");
+    </script>
+    <a href="/articles/?title={{ article.title|urlencode:"" }}">{{ article.title }}</a><br />
+{% endfor %}
