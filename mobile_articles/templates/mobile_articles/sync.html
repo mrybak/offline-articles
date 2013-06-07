@@ -2,5 +2,5 @@
     <script type="text/javascript">
             localStorage.setItem("{{ article.title }}", "{{ article.content }}");
     </script>
-    <a href="/articles/?title={{ article.title|urlencode:"" }}">{{ article.title }}</a><br />
+    <a onclick='display_article("{{ article.title }}")' href="#">{{ article.title }}</a><br />
 {% endfor %}
