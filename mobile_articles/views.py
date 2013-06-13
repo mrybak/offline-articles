@@ -4,11 +4,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from mobile_articles.models import Article
 
 def index(request):
-    title = request.GET.get('title', '')
-    context = {
-        'title' : title
-    }
-    return render(request, 'mobile_articles/index.html', context)
+    return render(request, 'mobile_articles/index.html')
 
 class ArticleFullList(ListView):
     model = Article
