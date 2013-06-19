@@ -1,12 +1,31 @@
 # Create your views here.
+from datetime import datetime
+import json
+import dateutil.parser
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView
-from mobile_articles.models import Article
+from mobile_articles.models import Article, RemovedArticle
+
 
 def index(request):
     return render(request, 'mobile_articles/index.html')
 
-class ArticleFullList(ListView):
-    model = Article
-    template_name = 'mobile_articles/sync.html'
+def sync(request):
+    fetch_from = dateutil.parser.parse(request.GET['fetch_from'])
+    print(fetch_from)
+    new_articles = Article.objects.filter(pub_date__gt=fetch_from)
+    removed_articles = RemovedArticle.objects.filter(del_date__gt=fetch_from)
+    updated = []
+    deleted = []
+    for article in new_articles:
+        # array [title, content] representing new article
+        updated.append([article.title, article.content])
+    for article in removed_articles:
+        deleted.append(article.title)
+    response_data = {
+        'updated' : updated,
+        'deleted' : deleted,
+    }
+
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
 

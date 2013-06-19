@@ -12,8 +12,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        # 'NAME': '/home/mrybak/PycharmProjects/articles/db.sqlite',                      # Or path to database file if using sqlite3.
-        'NAME': '/home/students/inf/m/mr321163/WWW/06_06_2013_articles/offline-articles/db.sqlite',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/mrybak/PycharmProjects/articles/db.sqlite',                      # Or path to database file if using sqlite3.
+        # 'NAME': '/home/students/inf/m/mr321163/WWW/06_06_2013_articles/offline-articles/db.sqlite',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',

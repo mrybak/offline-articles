@@ -13,5 +13,4 @@ CACHE:
 
 # Resources that require the user to be online.
 NETWORK:
-sync.html
 /articles/sync
