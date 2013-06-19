@@ -1,6 +1,7 @@
 {% for article in object_list %}
     <script type="text/javascript">
             localStorage.setItem("{{ article.title }}", "{{ article.content }}");
+            $('.content').hide();
     </script>
     <a onclick='display_article("{{ article.title }}")' href="#">{{ article.title }}</a><br />
 {% endfor %}
